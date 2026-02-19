@@ -26,7 +26,7 @@ COPY requirements.api.txt .
 #   1. Try from local wheels first (fast, offline)
 #   2. Fall back to PyPI if wheels are missing or incompatible
 RUN pip install --upgrade pip \
- && pip install -r requirements.streamlit.txt
+ && pip install -r requirements.api.txt
 
 
 # Verify no broken dependencies (good safety check)
