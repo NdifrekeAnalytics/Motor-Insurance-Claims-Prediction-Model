@@ -47,50 +47,10 @@ Develop a machine learning model and web application that:
 - **Deployment options tested**: Render, Railway.app, Oracle Cloud Always Free VM
 
 
+---
+### 📁 **Project Structure** _(Core Deployment Files)_
 
-## 📁 Project Structure _(Core Deployment Files)_
-
-![Project Structure](assets/project-structure.jpg)
-
-### **Motor Insurance FNOL Claims Prediction/**
-### **Motor Insurance FNOL Claims Prediction/**
-│
-
-├── app/                             # FastAPI app
-
-│   ├── main.py                      	# FastAPI application with /predict endpoint
-
-│   ├── schemas.py                   	# Pydantic models
-
-│   ├── explainability.py            	# SHAP + LIME logic
-
-│   └── artifacts/                   	# preprocessor.joblib, model.joblib, shap_background.pkl
-
-├── streamlit_app.py	              	# Streamlit frontend UI
-
-├── assets/		                      	# Images, logos, static files
-
-│
-
-├── Dockerfile.api		              	# FastAPI backend image
-
-├── Dockerfile.streamlit	          	# Streamlit frontend image
-
-├── docker-compose.yml		          	# Orchestrates API + Streamlit
-
-│
-
-├── requirements.api.txt
-
-├── requirements.streamlit.txt
-
-├── wheels/
-
-│
-
-├── .dockerignore
-
-└── README.md
+<img src="assets/project-structure.jpg" alt="Project Structure" width="45%">
 
 
 ### 📊 **Model Performance & Results**
