@@ -1,10 +1,10 @@
-### Motor Insurance Ultimate Claims Prediction Model
+# **Motor Insurance Ultimate Claims Prediction Model**
 
 
-![Guardian Logo](assets/guardian-logo.png) <!-- Optional: add if you have a logo in assets/ -->
+![Guardian Logo](assets/guadian_new_logo.png) <!-- Optional: add if you have a logo in assets/ -->
 
 
-Predicting **ultimate claim amounts** for motor insurance using early FNOL (First Notification of Loss) indicators, with **SHAP** and **LIME** explainability.
+##### Predicting **ultimate claim amounts** for motor insurance using early FNOL (First Notification of Loss) indicators, with **SHAP** and **LIME** explainability.
 
 
 
@@ -34,8 +34,6 @@ Develop a machine learning model and web application that:
 
 ## 🛠️ Tech Stack
 
-
-
 - **Backend**: FastAPI (Python)  
 
 - **Frontend**: Streamlit  
@@ -52,13 +50,13 @@ Develop a machine learning model and web application that:
 
 ## 📁 Project Structure _(Core Deployment Files)_
 
-
+![Project Structure](assets/project-structure.jpg)
 
 ### **Motor Insurance FNOL Claims Prediction/**
-
+### **Motor Insurance FNOL Claims Prediction/**
 │
 
-├── app/                       # FastAPI app
+├── app/                             # FastAPI app
 
 │   ├── main.py                      	# FastAPI application with /predict endpoint
 
@@ -68,17 +66,17 @@ Develop a machine learning model and web application that:
 
 │   └── artifacts/                   	# preprocessor.joblib, model.joblib, shap_background.pkl
 
-├── streamlit_app.py		# Streamlit frontend UI
+├── streamlit_app.py	              	# Streamlit frontend UI
 
-├── assets/			# Images, logos, static files
+├── assets/		                      	# Images, logos, static files
 
 │
 
-├── Dockerfile.api		      	# FastAPI backend image
+├── Dockerfile.api		              	# FastAPI backend image
 
-├── Dockerfile.streamlit	      	# Streamlit frontend image
+├── Dockerfile.streamlit	          	# Streamlit frontend image
 
-├── docker-compose.yml			# Orchestrates API + Streamlit
+├── docker-compose.yml		          	# Orchestrates API + Streamlit
 
 │
 
@@ -94,21 +92,23 @@ Develop a machine learning model and web application that:
 
 └── README.md
 
+
 ### 📊 **Model Performance & Results**
 * **Model:** Gradient Boosting Regressor
 * **Target:** Ultimate Claim Amount (log-transformed during training, exponentiated for final output)
 * **Key metrics** _(on hold-out/test set – update with your actual numbers):_
-&nbsp;	- **MAE:** 1,315.26 USD
-&nbsp;	- **RMSE:** 3534.04 USD
-&nbsp;	- **R²:** 0.9913
-&nbsp;	- **MAPE:** 11.37%
+  - **MAE:** 1,315.26 USD
+  - **RMSE:** 3534.04 USD
+  - **R²:** 0.9913
+  - **MAPE:** 11.37%
 
 * **Explainability Highlights:**
-&nbsp;	- SHAP Explainabilty: Primary for global & local explanations. Top global drivers using SHAP summary for features like Estimated Claim Amount, Severity Score, Days to Settlement, Fraud Flag, Litigation Flag, Credit Score Band
-
-&nbsp;	- LIME: Local confirmation. LIME often highlights non-linear thresholds (e.g., Severity Score > 3, Claim Duration < 30 days)
+  - **SHAP Explainabilty:** Primary for global & local explanations. Top global drivers using SHAP summary for features like Estimated Claim Amount, Severity Score, Days to Settlement, Fraud Flag, Litigation Flag, Credit Score Band
+  - **LIME:** Local confirmation. LIME often highlights non-linear thresholds (e.g., Severity Score > 3, Claim Duration < 30 days)
 
 
 **Example Prediction Output:**
-* **Input:** Moderate severity, young driver, theft claim → Predicted ~NGN 1,961,300
-* **SHAP** shows strong negative impact from low severity + short settlement time
+* **Input:** Claim Duration, Moderate severity, Young driver, Theft claim → Predicted ~ USD 1,961,300
+* **SHAP** Shows strong negative impact from low severity + short settlement time
+
+
