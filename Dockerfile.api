@@ -20,13 +20,14 @@ RUN mkdir -p /etc/pip && \
 COPY requirements.api.txt .
 
 # Copy pre-built wheels (if you have any heavy libs pre-downloaded)
-COPY wheels/ /wheels/
+# COPY wheels/ /wheels/
 
 # Install dependencies:
 #   1. Try from local wheels first (fast, offline)
 #   2. Fall back to PyPI if wheels are missing or incompatible
-RUN pip install --no-index --find-links=/wheels -r requirements.api.txt || \
-    pip install -r requirements.api.txt
+RUN pip install --upgrade pip \
+ && pip install -r requirements.streamlit.txt
+
 
 # Verify no broken dependencies (good safety check)
 RUN pip check
