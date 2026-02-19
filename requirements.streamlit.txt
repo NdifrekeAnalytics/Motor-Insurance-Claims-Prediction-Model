@@ -1,0 +1,14 @@
+streamlit==1.36.0
+altair>=4.0,<6
+requests
+pandas==2.2.3 # Match API
+numpy==2.2.6
+gitpython
+pydeck
+click
+protobuf
+rich
+tenacity
+toml
+pillow
+plotly>=5.18.0  # Added for plotly.express (fixes ModuleNotFoundError: No module named 'plotly')

@@ -1,0 +1,41 @@
+# Use slim base image for smaller footprint
+FROM python:3.11.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies needed for building some Python packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Harden pip (disable cache, version check, set timeout/retries)
+ENV PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+RUN mkdir -p /etc/pip && \
+    printf "[global]\ntimeout = 300\nretries = 20\nindex-url = https://pypi.org/simple\n" > /etc/pip/pip.conf
+
+# Copy only the requirements file first (best practice for layer caching)
+COPY requirements.api.txt .
+
+# Copy pre-built wheels (if you have any heavy libs pre-downloaded)
+COPY wheels/ /wheels/
+
+# Install dependencies:
+#   1. Try from local wheels first (fast, offline)
+#   2. Fall back to PyPI if wheels are missing or incompatible
+RUN pip install --no-index --find-links=/wheels -r requirements.api.txt || \
+    pip install -r requirements.api.txt
+
+# Verify no broken dependencies (good safety check)
+RUN pip check
+
+# Copy the actual application code
+COPY app/ ./app/
+
+# Expose the FastAPI port
+EXPOSE 8000
+
+# Run uvicorn (production-ready server)
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

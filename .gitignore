@@ -1,0 +1,91 @@
+# Ignore all Jupyter Notebooks and related files
+*.ipynb
+.ipynb_checkpoints/
+
+# Ignore data files and folders
+Data/
+Claims_Final_Merged.csv
+Claims_Final_Merged_v2.csv
+Claims_Final_Merged_v3.csv
+Claims_Final_Merged_v4.csv
+Claims_Final_Merged_Enhanced.csv
+Merged_motor_insurance_claims_FNOL.csv
+Claim_Duration & FNOL_temporal_analysis.csv
+
+# Ignore output folders and files
+Outputs/
+Predicted_vs_Actual_Comparison.csv
+Predicted_vs_Actual_Line.csv
+Residuals_Histogram_Plot_comparison.csv
+Residuals_Scatterplot_comparison.csv
+
+# Ignore visualization files and folders
+Visualizations/
+APE_Histogram_Comparison.csv
+Box & Violin Plots_vehicle_and_driver.csv
+Claim_type_comparison.csv
+Log_Claim_Duration & FNOL_temporal_analysis.csv
+temporal_analysis_scatter.csv
+severity_analysis_boxplots.csv
+avg_claim_by_third_parties.csv
+gbr_shap_waterfall_claim_0.csv
+shap_summary.csv
+shap_waterfall_example.csv
+third_parties/
+
+# Ignore model files and folders
+Models_Performance_Evaluations_Comparison.csv
+Model_Development & Deployment.csv
+Model_Development & Deployment_v1.csv
+Model_Development & Deployment_v2.csv
+Model_Development & Deployment_v3.csv
+Model_Diagnostic_Comparison.csv
+claims_model.pkl
+preprocessing_pipeline.pkl
+prefix_stripper_utils.py
+
+# Ignore reports and documents
+Data_Assessment_Report_on_Early_Prediction_of_Motor_Insurance_Claims.pdf
+Day_1_Task_-_Goal_Target_Why_It_Is_Important.pdf
+Day_2_Task_-_Data_Assessment_Report.pdf
+Day_2_Task_-_Early_Prediction_of_Motor_Insurance_Claims.pdf
+Day_3_Task_-_Early_Prediction_of_Motor_Insurance_Claims.pdf
+Day_3_Task_-_Prediction_of_Motor_Insurance_Claims.pdf
+FNOL_Claims_Day_1_-_3_Tasks.pdf
+README_File_For_This_Project.md
+Trusted_main.py_Code_Backup.py
+Update_the_Streamlit_code_below_and_achieve_the_attached_UI.pdf
+Week_2_Day_1_Task_-_Early_Prediction_of_Motor_Insurance_Claims.pdf
+Week_2_Day_2_Task_-_Early_Prediction_of_Motor_Insurance_Claims.pdf
+Week_2_Day_5_Task_1.pdf
+Week_2_Day_5_Task_2.pdf
+Aurelien-Géron-Hands-On-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow_-Concepts-Tools-and-Techniques-to-Build-Intelligent-Systems-O’Reilly-Media-2019.pdf
+ChatGPT_Workflow.csv
+
+# Ignore other unnecessary files/folders
+.pycache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+.git/  # Already ignored by Git itself
+docker-compact.env
+reeport.env
+favicon.ico
+logo.png
+policyholders/
+shap/
+temporal_analysis_scatter/
+~*
+
+# Ignore any large artifacts/models if not needed
+artifacts/
+*.joblib
+*.pkl

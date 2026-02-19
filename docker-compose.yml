@@ -1,0 +1,28 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: claims-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./app/artifacts:/app/app/artifacts
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: claims-streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit_app.py:/app/streamlit_app.py
+      - ./assets:/app/assets
+    environment:
+      - API_URL=http://claims-api:8000/predict
+    depends_on:
+      - api
